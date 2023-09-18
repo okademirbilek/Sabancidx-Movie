@@ -1,0 +1,53 @@
+@use "sass:math";
+@use "variables" as *;
+@use "breakpoints" as *;
+
+
+
+
+.details-container {
+   
+    border: 1px solid pink;
+    background-color: white;
+    margin-top: 1em;
+    border-radius: 10px;
+    color:rgb(31, 30, 30);
+
+    .row {
+        gap: 0px;
+        @include md{
+            gap: 40px;
+        }
+        img {
+            border-radius: 8px;
+            max-height: 450px;
+            max-width: 500;
+        }
+        // .movie-info {
+        //   margin-top: 5px;
+        //   width: 50%;
+        //   @include md{
+        //     gap: 15px;
+        //   }
+        //   gap: 1px;
+        //   h4 {
+        //     font-size: 1.5em;
+        //   }
+        //   p {
+           
+        //     font-weight: 100;
+        //     height: 16px;
+        //   }
+        // }
+        .movie-info{
+            gap: 2px;
+            @include md{
+                    gap: 10px;
+            }
+            .desp{
+                max-width: 700px;
+            }
+        } 
+    }
+  }
+  
