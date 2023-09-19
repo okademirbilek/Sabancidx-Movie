@@ -32,7 +32,6 @@
         <li><a href="#installation">Installation</a></li>
       </ul>
     </li>
-    <li><a href="#usage">Usage</a></li>
     <li><a href="#contact">Contact</a></li>
   </ol>
 </details>
@@ -54,13 +53,12 @@ It's a movie app with React where you can search for movies by movie genre, rele
 
 This section should list any major frameworks/libraries used to bootstrap your project. Leave any add-ons/plugins for the acknowledgements section. Here are a few examples.
 
-* [![React][React.js]]
-* [![vite][Vite]]
-* [![React-router][React-router]]
-* [![Sass][Sass]]
-* [![Gulp][Gulp]]
+* React.js
+* Vite
+* React-router
+* Sass(SCSS)
+* Gulp
   
-
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
 
@@ -68,7 +66,7 @@ This section should list any major frameworks/libraries used to bootstrap your p
 <!-- GETTING STARTED -->
 ## Getting Started
 
-For setting up project locally.follow these steps.
+For setting up project locally follow these steps.
  
 
 ### Prerequisites
@@ -102,20 +100,6 @@ This is an example of how to list things you need to use the software and how to
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
 
-
-<!-- USAGE EXAMPLES -->
-## Usage
-
-Use this space to show useful examples of how a project can be used. Additional screenshots, code examples and demos work well in this space. You may also link to more resources.
-
-_For more examples, please refer to the [Documentation](https://example.com)_
-
-<p align="right">(<a href="#readme-top">back to top</a>)</p>
-
-
-
-
-
 <!-- CONTACT -->
 ## Contact
 
@@ -123,9 +107,5 @@ Email - (okan demirbilek) - okan_demirbilekgeo@hotmail.com
 
 Project Link: [https://github.com/okademirbilek/Sabancidx-Movie](https://sabancidxokan.netlify.app/)
 
-
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
-
-
-<p align="right">(<a href="#readme-top">back to top</a>)</p>
