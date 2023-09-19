@@ -50,7 +50,6 @@ export default function ResultsPage() {
   [currentMovieName,seachOption]
 );
 
-
   if (loading) {
     return <h1 className="error-msg loading">Loading...</h1>;
   }

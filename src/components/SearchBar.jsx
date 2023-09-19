@@ -3,8 +3,6 @@ import { useNavigate } from "react-router-dom";
 
 function SearchBar({ setCurrentMovieName }) {
   const [query, setQuery] = useState("");
-  console.log(query)
-
   const navigate = useNavigate();
 
   function handleChange(event) {
