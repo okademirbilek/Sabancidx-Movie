@@ -1,4 +1,4 @@
-import React, {useEffect, useState} from "react";
+import React from "react";
 import useFetch from "../hooks/useFetch";
 import MovieCart from "../components/MovieCart";
 
@@ -10,11 +10,7 @@ export default function ResultsPage() {
   const {currentMovieName, seachOption} = useOutletContext();
   //getting all genre , year , and platform data
   const { allData } = useData();
-
-  // const defaultYear = allData.year.data.releaseYears[0].year
-  // const defaultGenre = allData.genre.data.genres[0].genreId
-  // const defaultPlatform = allData.platform.data.platforms[0].platformId
-
+  
 
   let option;
 
@@ -54,16 +50,13 @@ export default function ResultsPage() {
   [currentMovieName,seachOption]
 );
 
-// 'genreId': 'aaa6afea-f010-4697-9621-69922388264f',
-// 'platformId': 'a872f57f-0f84-4d2c-a4fc-0242738b0196',
-// 'movieId': '4ab7e438-f0e9-4725-963d-6b8a4a34c2d1'
 
   if (loading) {
     return <h1 className="error-msg loading">Loading...</h1>;
   }
 
   if (value) {
-    // console.log(value.data.totalRecord === 0)
+    console.log(value)
     if (!value.data.totalRecord) {
       return <h1 className="bg-error error-msg">Unable to find what you’re looking for Please try another search </h1>;
     }

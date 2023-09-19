@@ -1,13 +1,10 @@
 import React from "react";
 import { useParams } from "react-router-dom";
-import { Link } from "react-router-dom";
 import useFetch from "../hooks/useFetch";
 import DetailCard from "../components/DetailCard";
 
 export default function MovieDetails() {
   const params = useParams();
-  console.log(params.movie);
-
   const {loading, error, value} = useFetch(
     'https://communicationservice.sabancidx.com/moviemap/movie/get-movie-list',
     {
@@ -30,7 +27,6 @@ export default function MovieDetails() {
     }
   
     if (value) {
-      // console.log(value.data)
       if (value.Response === "False") {
         return <h1 className="error-msg">{value.Error}</h1>;
       }

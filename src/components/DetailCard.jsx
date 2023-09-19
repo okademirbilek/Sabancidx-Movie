@@ -2,7 +2,6 @@ import React,{useState} from "react";
 
 export default function DetailCard({data}) {
   const [imageStatus,setImageStatus] = useState(false)
-  console.log(data)
     return (
       
         <div className="details-container container display-f pt-2 pb-2 mb-2 ">

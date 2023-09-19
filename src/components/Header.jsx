@@ -1,4 +1,4 @@
-import React,{useState} from "react";
+import React from "react";
 import SearchBar from "../components/SearchBar";
 import logo from "../assets/images/logo.png";
 import { Link } from "react-router-dom";
@@ -9,11 +9,13 @@ function Header({ setCurrentMovieName, setSearchOption }) {
  };
   return (
     <header className="header container display-f  pt-1 mb-2">
-      <div className="row">
+      <div className="row align-center">
         <img className="logo" src={logo} alt="movie title logo S" />
+        <nav>
         <Link to="/">
           <h1 className="ml-1">Movie</h1>
         </Link>
+        </nav>
         <SearchBar setCurrentMovieName={setCurrentMovieName} />
         <div className="dropdown" onChange={handleChange}>
           <select className="bg-headerColor">

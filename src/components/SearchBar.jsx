@@ -3,6 +3,7 @@ import { useNavigate } from "react-router-dom";
 
 function SearchBar({ setCurrentMovieName }) {
   const [query, setQuery] = useState("");
+  console.log(query)
 
   const navigate = useNavigate();
 
@@ -13,13 +14,14 @@ function SearchBar({ setCurrentMovieName }) {
 
   const handleSubmit = (event) => {
     event.preventDefault();
-    setCurrentMovieName(query);
+    const uppercaseQuery = query.charAt(0).toUpperCase() + query.slice(1);
+    setCurrentMovieName(uppercaseQuery);
     const queryForParams = query.split(" ").join("+");
     navigate(`/${queryForParams}`);
   };
 
   return (
-    <section className="search-bar-container ml-2">
+    <section className="search-bar-container">
       <form onSubmit={handleSubmit}>
         <div className="search-bar">
           <input

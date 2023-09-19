@@ -1,17 +1,26 @@
 @use "../variables" as *;
 @use "../functions" as *;
+@use "breakpoints" as *;
 
 .title {
   margin-top: 4em;
   .row {
-    gap: 100px;
+    gap: 10px;
+    @include md {
+      gap: 100px;
+    }
+    
     align-items: center;
     h1 {
-      font-size: $font-size-xxl;
+      
       color: $headerColor;
       max-width: 600px;
       text-shadow: 0px 3px 3px #abc2c5;
       -webkit-text-stroke: 0.1px black;
+
+      @include md {
+        font-size: $font-size-xxl;
+      }
     }
     p {
       color: #64898e;

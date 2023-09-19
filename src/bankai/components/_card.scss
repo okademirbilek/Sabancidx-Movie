@@ -54,5 +54,10 @@
         background-color: rgb(16, 16, 16);
       }
     }
+    .genres {
+      white-space: nowrap;
+      overflow: hidden;
+      text-overflow: ellipsis;
+    }
   }
 }

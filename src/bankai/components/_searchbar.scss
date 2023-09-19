@@ -1,9 +1,18 @@
 @use "../variables" as *;
 @use "../functions" as *;
+@use "breakpoints" as *;
 
 .search-bar-container {
   max-width: 400px;
   width: 341px;
+  margin: 10px 0;
+  @include md {
+    margin-left: 10px;
+    margin-top: 0;
+    margin-bottom: 0;
+    
+  }
+  
 
   form {
     display: flex;
