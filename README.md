@@ -41,7 +41,8 @@
 <!-- ABOUT THE PROJECT -->
 ## About The Project
 
-[![Product Name Screen Shot][product-screenshot]](https://example.com)
+![image](https://github.com/okademirbilek/Sabancidx-Movie/assets/48480726/88535a0d-bba6-40a8-a3c3-7314b270c015)
+
 
 It's a movie app with React where you can search for movies by movie genre, release year, and platfom.
 
@@ -105,7 +106,7 @@ This is an example of how to list things you need to use the software and how to
 
 Email - (okan demirbilek) - okan_demirbilekgeo@hotmail.com
 
-Project Link: [https://github.com/okademirbilek/Sabancidx-Movie](https://sabancidxokan.netlify.app/)
+Project Link: (https://sabancidxokan.netlify.app/)
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
