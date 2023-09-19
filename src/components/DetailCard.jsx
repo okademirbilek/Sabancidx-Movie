@@ -1,4 +1,4 @@
-import React,{useState} from "react";
+import React,{useEffect, useState ,useRef} from "react";
 import MovieCart from "../components/MovieCart";
 import useFetch from "../hooks/useFetch";
 
@@ -6,37 +6,37 @@ export default function DetailCard({data}) {
   const [imageStatus,setImageStatus] = useState(false)
   const [isShow,setIsShow] = useState(false)
   const [directorId,setDirectorId] = useState("")
+  const [directorMovies,setDirectorMovies] = useState(null)
+  const isMounted = useRef(false);
+  console.log(directorId)
 
   function changeShow(id){
     setIsShow(true)
     setDirectorId(id)
-    console.log(id)
   }
 
-    const {loading, error, value} = useFetch(
-      'https://communicationservice.sabancidx.com/moviemap/movie/get-movie-list',
-      {
-      method: 'POST',
-      headers: {
-          'accept': 'application/json',
-          'Content-Type': 'application/json'
-      },
-      body: JSON.stringify({
-        'pageNumber': 1,
-        'pageSize': 50,
-        "directorId":directorId
-      })  
-      },
-      [directorId]
-    );
- 
-    if (value) {
-      console.log(value)
-      if (!value.data.totalRecord) {
-        return <h1 className="bg-error error-msg">Unable to find what you’re looking for Please try another search </h1>;
-      }
-    }
-  
+  useEffect(()  => {
+    if (isMounted.current) {
+      console.log("hiii")
+      fetch('https://communicationservice.sabancidx.com/moviemap/movie/get-movie-list', {
+        method: 'POST',
+        headers: {
+            'accept': 'application/json',
+            'Content-Type': 'application/json'
+        },
+        body: JSON.stringify({
+            'pageNumber': 1,
+            'pageSize': 50,
+            'directorId':directorId
+        })
+        }).then(res => res.json().then(data => setDirectorMovies(data))) ;
+    } else {
+      console.log("first render")
+      isMounted.current = true;
+    }   
+  },[isShow])
+
+
 
 
     return (
@@ -76,14 +76,14 @@ export default function DetailCard({data}) {
               <h2>Other movies of Directors</h2>
               <button onClick={() => changeShow(data.director.directorId)}> {data.director.directorName}</button>
               <div>
-                {value && isShow &&  (
+                {directorMovies && isShow &&  (
                   
 
                   <div className="container align-c  mb-3 p-0 ">
                      <div className="row gp-2  justify-center  pt-3 pb-3"> 
-                      {value.data.movies.map(item => {
-                    return <MovieCart key={item.movieId} data={item}/>
-                  })}
+                      {directorMovies.data.movies.map(item => {
+                          return <MovieCart key={item.movieId} data={item}/>
+                      })}
                       </div>
                    </div>
                 )}
