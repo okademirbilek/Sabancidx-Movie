@@ -2,30 +2,42 @@ import React, {useEffect, useState} from "react";
 import useFetch from "../hooks/useFetch";
 import MovieCart from "../components/MovieCart";
 
+import { useData } from "../context/MovieContext";
+
 import {useOutletContext} from "react-router-dom";
 
 export default function ResultsPage() {
   const {currentMovieName, seachOption} = useOutletContext();
+  //getting all genre , year , and platform data
+  const { allData } = useData();
+
+  // const defaultYear = allData.year.data.releaseYears[0].year
+  // const defaultGenre = allData.genre.data.genres[0].genreId
+  // const defaultPlatform = allData.platform.data.platforms[0].platformId
+
 
   let option;
 
   if(seachOption === "year") {
+    const result1 = allData.year.data.releaseYears.filter(item => item.year === currentMovieName)
     option = {
       'pageNumber': 1,
       'pageSize': 50,
-      'releaseYear': currentMovieName,     
+      'releaseYear':  result1[0]?.year || currentMovieName  ,     
     }
   }else if (seachOption === "genre") {
+    const result2 = allData.genre.data.genres.filter(item => item.genreName === currentMovieName)
     option = {
       'pageNumber': 1,
       'pageSize': 50,
-      'genreId': currentMovieName,     
+      'genreId': result2[0]?.genreId || currentMovieName  ,     
     }
   }else if (seachOption === "platform") {
+    const result3 =  allData.platform.data.platforms.filter(item => item.platformName === currentMovieName)
     option = {
       'pageNumber': 1,
       'pageSize': 50,
-      'platformId': currentMovieName,     
+      'platformId': result3[0]?.platformId  || currentMovieName,    
     }
   }
 
@@ -47,7 +59,7 @@ export default function ResultsPage() {
 // 'movieId': '4ab7e438-f0e9-4725-963d-6b8a4a34c2d1'
 
   if (loading) {
-    return <h1 className="error-msg">Loading...</h1>;
+    return <h1 className="error-msg loading">Loading...</h1>;
   }
 
   if (value) {

@@ -26,7 +26,7 @@ export default function MovieDetails() {
   
   
     if (loading) {
-      return <h1 className="error-msg">Loading...</h1>;
+      return <h1 className="error-msg loading">Loading...</h1>;
     }
   
     if (value) {

@@ -1,16 +1,29 @@
-import React from 'react'
+import React,{useState} from "react";
 
 export default function DetailCard({data}) {
+  const [imageStatus,setImageStatus] = useState(false)
   console.log(data)
     return (
       
         <div className="details-container container display-f pt-2 pb-2 mb-2 ">
         <div className='row'>
-          <img
-              src={data.posterUrl}
-              className="movie-image"
-              alt={`${data.name} Poster`}
-            />
+              <img
+                src={data.posterUrl}
+                
+                alt={`${data.name
+                } Poster`}
+                onLoad={() => setImageStatus(true)}
+                style={!imageStatus ? {display:  "none" } : {display:  "block" }  }
+              />
+
+              {!imageStatus && (
+                <img
+                src="https://www.omdbapi.com/src/poster.jpg"
+                className="movie-image"
+                style={{maxWidth:"295.5px" , height:"449.97px" }}
+              />  
+              )}
+            
             
             <div className="movie-info display-f fd-c">
               <h2>{data.name}</h2>

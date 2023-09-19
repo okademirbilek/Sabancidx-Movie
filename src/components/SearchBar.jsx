@@ -28,8 +28,6 @@ function SearchBar({ setCurrentMovieName }) {
             placeholder="Search for movies"
             onChange={handleChange}
             value={query}
-            required
-            minLength={3}
             className="film-input"
           ></input>
         </div>

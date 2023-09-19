@@ -2,13 +2,12 @@ import { useState } from "react";
 import Header from "../components/Header";
 import { Outlet, useLocation } from "react-router-dom";
 
+import DefaultMovies from "../components/DefaultMovies";
+
 function Home() {
   const [currentMovieName, setCurrentMovieName] = useState("");
   const [seachOption, setSearchOption] = useState('year');
-  // console.log(seachOption)
-  
   const location = useLocation();
-
   return (
     <div className="bg-backColor height">
       <Header setCurrentMovieName={setCurrentMovieName} setSearchOption={setSearchOption} />
@@ -29,13 +28,15 @@ function Home() {
         </div>
       </section>
       <main className="container">
-        {location.pathname === "/" && (
-          <img
-            src="https://images4.alphacoders.com/130/1301437.jpg"
-            alt=" guardians of galaxy"
-            className="mt-1 mb-1"
-          />
-        )}
+        {location.pathname === "/" && 
+          // <img
+          //   src="https://images4.alphacoders.com/130/1301437.jpg"
+          //   alt=" guardians of galaxy"
+          //   className="mt-1 mb-1"
+          // />
+          <DefaultMovies/>
+          
+        }
         <div className="row">
           <Outlet
             context={{

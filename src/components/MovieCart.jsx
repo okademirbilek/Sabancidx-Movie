@@ -1,27 +1,42 @@
+import React,{useState} from "react";
 import { Link } from "react-router-dom";
 
 function MovieCart({data}) {
-  
+  const [imageStatus,setImageStatus] = useState(false)
   return (
     <div className="film-container display-f fd-c align-center pt-1 pb-1 ">
-      {data.posterUrl.statusCode !== "400" ? (
-          <img
-            src={data.posterUrl}
-            className="movie-image"
-            alt={`${data.name
-            } Poster`}
-          />
+      {/* {data.posterUrl.statusCode !== "400" ? (
+          
         ) : (
           <img
             src="https://www.omdbapi.com/src/poster.jpg"
             className="movie-image"
           />
-        )}
+        )} */}
 
-      {/* <img
-        src="https://www.omdbapi.com/src/poster.jpg"
-        className="movie-image"
-      /> */}
+     
+
+
+        <img
+          src={data.posterUrl}
+          className="movie-image"
+          alt={`${data.name
+          } Poster`}
+          onLoad={() => setImageStatus(true)}
+          style={!imageStatus ? {display:  "none" } : {display:  "block" }  }
+        />
+
+        {!imageStatus && (
+           <img
+           src="https://www.omdbapi.com/src/poster.jpg"
+           className="movie-image"
+         />  
+        )}
+        
+        
+       
+
+          
       
       <div className="movie-info display-f fd-c">
         <p className="soft">Year: {data.releaseYear}</p>
