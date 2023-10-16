@@ -51,9 +51,6 @@ It's a movie app with React where you can search for movies by movie genre, rele
 
 
 ### Built With
-
-This section should list any major frameworks/libraries used to bootstrap your project. Leave any add-ons/plugins for the acknowledgements section. Here are a few examples.
-
 * React.js
 * Vite
 * React-router
